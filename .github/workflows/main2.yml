@@ -26,7 +26,8 @@ jobs:
           version: 12
 
       - name: Installing packages
-        run: npm install
+        with:
+          cmd: npm install
 
       - name: Creating build
         run: npm run build

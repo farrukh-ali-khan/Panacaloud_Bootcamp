@@ -6,7 +6,7 @@ name: Assignment2
 # events but only for the master branch
 on:
   push:
-    branches: [ assignment2 ]
+    branches: [assignment2]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,15 +24,15 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           version: 12
-              
+
       - name: Installing packages
         run: npm install
-        
+
       - name: Creating build
         run: npm run build
-      
+
       - name: Installing Surge
         run: npm install -g surge
-        
+
       - name: Deploying on surge
-        run: surge ./build http://bootcamp_react_base_app_assignment2_by_farrukh_ali_khan.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
+        run: surge ./build http://bootcamp_react_base_app_assignment2_by_farrukh_ali_khan.surge.sh/ --token ${{secrets.SURGE_TOKEN2}}
